@@ -5,22 +5,29 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
-    [SerializeField] PowerType test;
+    [SerializeField] PowerType Type;
+    [SerializeField] GameObject test1;
+    [SerializeField] GameObject test2;
 
     void Update()
     {
         CheckForInput();
-        UsePower();
     }
 
-    private void UsePower()
+    void UsePower()
     {
-        switch (test)
+        switch (Type)
         {
             case PowerType.Gentleman:
-                break;
+                {
+                    Instantiate(test1);
+                    break;
+                }
             case PowerType.Graffiti:
-                break;
+                {
+                    Instantiate(test2);
+                    break;
+                }
             default:
                 break;
         }
@@ -28,7 +35,10 @@ public class Power : MonoBehaviour
 
     void CheckForInput()
     {
-        
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            UsePower();
+        }
     }
 }
     
