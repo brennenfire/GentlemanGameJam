@@ -8,7 +8,7 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] GameObject Player2;
 
     [ContextMenu("Switch")]
-    void Switch()
+    public void Switch()
     {
         if (Player1.activeSelf)
         {
