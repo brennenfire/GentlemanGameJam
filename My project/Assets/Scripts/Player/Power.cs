@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class Power : MonoBehaviour
 
     void Update()
     {
+        CheckForInput();
+        UsePower();
+    }
+
+    private void UsePower()
+    {
         switch (test)
         {
             case PowerType.Gentleman:
@@ -17,6 +24,11 @@ public class Power : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    void CheckForInput()
+    {
+        
     }
 }
     
