@@ -177,7 +177,7 @@ MonoBehaviour:
     m_Bits: 64
   jumpPower: 15
   fallMultiplier: 5
-  jumpTime: 0.5
+  jumpTime: 0.3
   jumpMultiplier: 3
 --- !u!114 &74650107
 MonoBehaviour:

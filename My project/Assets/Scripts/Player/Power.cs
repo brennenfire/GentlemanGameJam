@@ -20,12 +20,12 @@ public class Power : MonoBehaviour
         {
             case PowerType.Gentleman:
                 {
-                    Instantiate(test1);
+                    Instantiate(test1, transform.position, Quaternion.identity);
                     break;
                 }
             case PowerType.Graffiti:
                 {
-                    Instantiate(test2);
+                    Instantiate(test2, transform.position, Quaternion.identity);
                     break;
                 }
             default:
