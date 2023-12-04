@@ -16,12 +16,12 @@ public class SwitchIndividualObject : MonoBehaviour
     public void SwitchOff()
     {
         collision.enabled = false;
-        spriteRenderer.enabled = false;
+        spriteRenderer.color = new Color(1f, 1f, 1f, 0.25f);
     }
 
     public void SwitchOn()
     {
         collision.enabled = true;
-        spriteRenderer.enabled = true;
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
     }
 }

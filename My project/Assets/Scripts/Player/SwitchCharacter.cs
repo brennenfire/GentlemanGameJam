@@ -29,7 +29,5 @@ public class SwitchCharacter : MonoBehaviour
             Gentleman.SetActive(false);
             Graffiti.SetActive(true);
         }
-
-        
     }
 }
