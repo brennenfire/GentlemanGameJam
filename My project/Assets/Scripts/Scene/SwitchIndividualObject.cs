@@ -18,7 +18,7 @@ public class SwitchIndividualObject : MonoBehaviour
         collision.enabled = false;
         spriteRenderer.color = new Color(1f, 1f, 1f, 0.25f);
     }
-
+    
     public void SwitchOn()
     {
         collision.enabled = true;
