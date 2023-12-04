@@ -24,7 +24,6 @@ public class SwitchCharacter : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Wait());
             Player2.SetActive(false);
             Player1.SetActive(true);
         }
