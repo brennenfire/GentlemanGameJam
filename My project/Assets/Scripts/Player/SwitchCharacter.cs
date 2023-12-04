@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,12 @@ public class SwitchCharacter : MonoBehaviour
     [ContextMenu("Switch")]
     public void Switch()
     {
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
         if (Player1.activeSelf)
         {
             Player2.SetActive(true);
@@ -17,6 +24,7 @@ public class SwitchCharacter : MonoBehaviour
         }
         else
         {
+            StartCoroutine(Wait());
             Player2.SetActive(false);
             Player1.SetActive(true);
         }
