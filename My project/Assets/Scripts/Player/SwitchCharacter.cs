@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SwitchCharacter : MonoBehaviour
 {
-    [SerializeField] GameObject Player1;
-    [SerializeField] GameObject Player2;
+    [SerializeField] GameObject Graffiti;
+    [SerializeField] GameObject Gentleman;
 
     [ContextMenu("Switch")]
     public void Switch()
@@ -17,15 +17,19 @@ public class SwitchCharacter : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1f);
-        if (Player1.activeSelf)
+        if (Graffiti.activeSelf)
         {
-            Player2.SetActive(true);
-            Player1.SetActive(false);
+            SwitchObjects.Instance.Switch("Gentleman");
+            Gentleman.SetActive(true);
+            Graffiti.SetActive(false);
         }
         else
         {
-            Player2.SetActive(false);
-            Player1.SetActive(true);
+            SwitchObjects.Instance.Switch("Graffiti");
+            Gentleman.SetActive(false);
+            Graffiti.SetActive(true);
         }
+
+        
     }
 }
