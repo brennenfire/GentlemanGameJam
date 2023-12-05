@@ -6,8 +6,8 @@ using UnityEngine;
 public class Power : MonoBehaviour
 {
     [SerializeField] PowerType Type;
-    [SerializeField] GameObject test1;
-    [SerializeField] GameObject test2;
+    [SerializeField] GameObject GePower;
+    [SerializeField] GameObject GrPower;
 
     void Update()
     {
@@ -20,12 +20,12 @@ public class Power : MonoBehaviour
         {
             case PowerType.Gentleman:
                 {
-                    Instantiate(test1, transform.position, Quaternion.identity);
+                    Instantiate(GePower, transform.position, Quaternion.identity);
                     break;
                 }
             case PowerType.Graffiti:
                 {
-                    Instantiate(test2, transform.position, Quaternion.identity);
+                    Instantiate(GrPower, transform.position, Quaternion.identity);
                     break;
                 }
             default:
