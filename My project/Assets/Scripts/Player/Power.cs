@@ -25,7 +25,7 @@ public class Power : MonoBehaviour
                 }
             case PowerType.Graffiti:
                 {
-                    Instantiate(GrPower, transform.position, Quaternion.identity);
+                    Instantiate(GrPower, transform.position + new Vector3(0f ,1f, 0f), Quaternion.identity);
                     break;
                 }
             default:
