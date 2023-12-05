@@ -14,7 +14,18 @@ public class SwitchCharacter : MonoBehaviour
 
     void Start()
     {
-        Check();
+        if (Graffiti.activeSelf)
+        {
+            SwitchObjects.Instance.Switch("Graffiti");
+            GraffitiUI.SetActive(false);
+            GentlemanUI.SetActive(true);
+        }
+        else
+        {
+            SwitchObjects.Instance.Switch("Gentleman");
+            GraffitiUI.SetActive(true);
+            GentlemanUI.SetActive(false);
+        }
     }
 
     [ContextMenu("Switch")]
