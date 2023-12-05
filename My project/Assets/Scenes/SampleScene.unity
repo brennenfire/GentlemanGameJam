@@ -564,6 +564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graffiti: {fileID: 131641222}
   Gentleman: {fileID: 268661141}
+  GentlemanUI: {fileID: 2028539066}
+  GraffitiUI: {fileID: 1542125322}
 --- !u!1 &853068499
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +911,7 @@ GameObject:
   - component: {fileID: 1188723906}
   m_Layer: 0
   m_Name: testart
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448525131237528682, guid: 99833757c346f1d47a735e403012d197, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3497481719880952185, guid: 99833757c346f1d47a735e403012d197, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1383,12 +1385,12 @@ GameObject:
   - component: {fileID: 1542125325}
   - component: {fileID: 1542125324}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SwitchToGraffiti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1542125323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1401,6 +1403,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1890841524}
   - {fileID: 1145889300}
   m_Father: {fileID: 1885965284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1703,7 +1706,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1890841524}
   - {fileID: 2028539067}
   - {fileID: 1542125323}
   m_Father: {fileID: 0}
@@ -1743,12 +1745,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1885965284}
+  m_Father: {fileID: 1542125323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 431.5}
+  m_SizeDelta: {x: 1470, y: 910}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1890841525
 MonoBehaviour:
@@ -1801,12 +1803,12 @@ GameObject:
   - component: {fileID: 2028539069}
   - component: {fileID: 2028539068}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SwitchToGentleman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2028539067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1982,7 +1984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448525131237528682, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3497481719880952185, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       propertyPath: m_LocalPosition.x
