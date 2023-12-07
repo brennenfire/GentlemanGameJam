@@ -78,6 +78,10 @@ public class DraggingPower : MonoBehaviour
         var _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
         float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
         // try calculating how much its moved here
+        if (selectedObject.transform.position.y > 5)
+            selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 5, selectedObject.transform.position.z);
+        if (selectedObject.transform.position.y < -5)
+            selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, -5, selectedObject.transform.position.z);
         _rigidbody.velocity = new Vector2(0, move);
     }
 }
