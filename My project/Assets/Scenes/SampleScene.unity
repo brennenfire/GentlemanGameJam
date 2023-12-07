@@ -1959,13 +1959,14 @@ GameObject:
   - component: {fileID: 1611156782}
   - component: {fileID: 1611156784}
   - component: {fileID: 1611156783}
+  - component: {fileID: 1611156785}
   m_Layer: 5
-  m_Name: GraffitiTransition
+  m_Name: GraffitiInTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1611156781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2033,7 +2034,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e2b2b2af2bfc77479d45204d2a373fc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2118,6 +2119,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1611156785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611156780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b488c6fe4246d48bd5e685ead08be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1739265678
 GameObject:
   m_ObjectHideFlags: 0
