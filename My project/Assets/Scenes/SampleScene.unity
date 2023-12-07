@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7835f41911ef746aeb26c88ffdd9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
 --- !u!50 &74650108
 Rigidbody2D:
   serializedVersion: 4
@@ -1355,8 +1355,9 @@ GameObject:
   - component: {fileID: 1287749422}
   - component: {fileID: 1287749425}
   - component: {fileID: 1287749424}
+  - component: {fileID: 1287749427}
   - component: {fileID: 1287749423}
-  - component: {fileID: 1287749426}
+  - component: {fileID: 1287749428}
   m_Layer: 6
   m_Name: Ground (3)
   m_TagString: Gentleman
@@ -1488,7 +1489,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1287749426
+--- !u!50 &1287749427
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287749421}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1287749428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1497,9 +1525,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287749421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1381be99d7742d445b238697b7e244b7, type: 3}
+  m_Script: {fileID: 11500000, guid: a333af430b3abe0469de262a3ac00288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedObject: {fileID: 0}
 --- !u!1 &1461594572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,7 +1965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1611156781
 RectTransform:
   m_ObjectHideFlags: 0

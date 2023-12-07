@@ -6,8 +6,7 @@ public class GentlemanPower : MonoBehaviour
 {
     public static GentlemanPower Instance { get; set; }
     public GameObject selectedObject;
-    Vector2 offset;
-    Vector2 startingPosition;
+    float verticalInput;
 
     void Awake()
     {
@@ -16,6 +15,7 @@ public class GentlemanPower : MonoBehaviour
 
     void Update()
     {
+        verticalInput = Input.GetAxis("Vertical");
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
@@ -23,17 +23,11 @@ public class GentlemanPower : MonoBehaviour
             if (targetObject && targetObject.tag == "Gentleman")
             {
                 selectedObject = targetObject.transform.gameObject;
-                startingPosition = selectedObject.transform.position;
-                offset = new Vector2(0, selectedObject.transform.position.y) - new Vector2(0, mousePosition.y);
             }
         }
         if (selectedObject)
         {
-            if(Vector2.Distance(startingPosition, selectedObject.transform.position) >= 5f)
-            {
-                selectedObject = null;
-            }
-            selectedObject.transform.position = new Vector2(selectedObject.transform.position.x, mousePosition.y) + offset;
+            CheckAimInput();
         }
         if (Input.GetMouseButtonUp(0) && selectedObject) 
         {
@@ -41,11 +35,16 @@ public class GentlemanPower : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void CheckAimInput()
     {
-        if(collision != null) 
-        {
-            Debug.Log("test collision");
-        }        
+        if (Input.GetMouseButton(1))
+            Move();
+    }
+
+    void Move()
+    {
+        var _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
+        float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 5f, Time.fixedDeltaTime * 2f);
+        _rigidbody.velocity = new Vector2(0, move);
     }
 }
