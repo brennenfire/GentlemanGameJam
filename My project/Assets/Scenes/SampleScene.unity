@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7835f41911ef746aeb26c88ffdd9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
 --- !u!50 &74650108
 Rigidbody2D:
   serializedVersion: 4
@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 211015455}
   - component: {fileID: 211015454}
   - component: {fileID: 211015453}
+  - component: {fileID: 211015456}
   m_Layer: 6
   m_Name: Ground (1)
   m_TagString: Gentleman
@@ -463,6 +464,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &211015456
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211015451}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &268661141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 448525131237528682, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
@@ -473,21 +501,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3497481719880952185, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
   m_PrefabInstance: {fileID: 7967697140989472041}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &268661145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268661141}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d446c3382613a4648b74df0ed33bc029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Type: 1
-  GePower: {fileID: 5871830202183041662, guid: 579daf5a6b516e14abfdd7689a4b56a0, type: 3}
-  GrPower: {fileID: 448525131237528682, guid: 99833757c346f1d47a735e403012d197, type: 3}
 --- !u!114 &268661148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,7 +826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &969359192
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3001,9 +3014,6 @@ PrefabInstance:
     - {fileID: 2934657261316177693, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 448525131237528682, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 268661145}
     - targetCorrespondingSourceObject: {fileID: 448525131237528682, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 268661148}
