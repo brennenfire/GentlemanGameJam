@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GentlemanPower : MonoBehaviour
@@ -15,6 +16,19 @@ public class GentlemanPower : MonoBehaviour
 
     void Update()
     {
+        CheckForAimInput();
+    }
+
+    void CheckForAimInput()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            HandleDragging();
+        }
+    }
+
+    void HandleDragging()
+    {
         verticalInput = Input.GetAxis("Vertical");
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
@@ -27,19 +41,22 @@ public class GentlemanPower : MonoBehaviour
         }
         if (selectedObject)
         {
-            CheckAimInput();
+            Move();
         }
-        if (Input.GetMouseButtonUp(0) && selectedObject) 
+        if (Input.GetMouseButtonUp(0) && selectedObject)
         {
+            selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             selectedObject = null;
         }
     }
 
+    /*
     void CheckAimInput()
     {
         if (Input.GetMouseButton(1))
             Move();
     }
+    */
 
     void Move()
     {
