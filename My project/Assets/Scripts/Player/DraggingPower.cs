@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GentlemanPower : MonoBehaviour
+public class DraggingPower : MonoBehaviour
 {
-    public static GentlemanPower Instance { get; set; }
+    public static DraggingPower Instance { get; set; }
     public GameObject selectedObject;
     float verticalInput;
 
@@ -17,6 +17,7 @@ public class GentlemanPower : MonoBehaviour
     void Update()
     {
         CheckForAimInput();
+        CheckToStop();
     }
 
     void CheckForAimInput()
@@ -29,9 +30,9 @@ public class GentlemanPower : MonoBehaviour
 
     void HandleDragging()
     {
-        verticalInput = Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxis("Mouse Y");
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
             if (targetObject && targetObject.tag == "Gentleman")
@@ -43,8 +44,21 @@ public class GentlemanPower : MonoBehaviour
         {
             Move();
         }
-        if (Input.GetMouseButtonUp(0) && selectedObject)
+    }
+
+    void CheckToStop()
+    {
+        if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
         {
+            StopDragging();
+        }
+    }
+
+    void StopDragging()
+    {
+        if(selectedObject) 
+        {
+            Cursor.lockState = CursorLockMode.None;
             selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             selectedObject = null;
         }
@@ -60,8 +74,10 @@ public class GentlemanPower : MonoBehaviour
 
     void Move()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         var _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
-        float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 5f, Time.fixedDeltaTime * 2f);
+        float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
+        // try calculating how much its moved here
         _rigidbody.velocity = new Vector2(0, move);
     }
 }
