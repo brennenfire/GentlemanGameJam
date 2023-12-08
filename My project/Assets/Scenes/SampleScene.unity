@@ -1224,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448525131237528682, guid: 99833757c346f1d47a735e403012d197, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3497481719880952185, guid: 99833757c346f1d47a735e403012d197, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b96d53dd9f68a04f9a637f6b821b8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: {x: 3, y: 3, z: 0}
+  limit: {x: 5, y: 0, z: 0}
   speed: 3
 --- !u!50 &1211866793
 Rigidbody2D:
@@ -3010,7 +3010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448525131237528682, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3497481719880952185, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       propertyPath: m_LocalPosition.x

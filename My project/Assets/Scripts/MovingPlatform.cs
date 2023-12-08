@@ -7,8 +7,8 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] Vector3 limit;
-    Vector3 positionTest;
-    Vector3 positionTest1;
+    Vector3 positiveLimit;
+    Vector3 negativeLimit;
 
     [SerializeField] float speed = 5f;
 
@@ -16,8 +16,8 @@ public class MovingPlatform : MonoBehaviour
 
     void Start()
     {
-        positionTest = transform.position + limit;
-        positionTest1 = transform.position - limit;
+        positiveLimit = transform.position + limit;
+        negativeLimit = transform.position - limit;
     }
 
     void Update()
@@ -30,9 +30,9 @@ public class MovingPlatform : MonoBehaviour
 
     void CheckPosition()
     {
-        if (transform.position == positionTest)
+        if (transform.position == positiveLimit)
             moving = false;
-        else if (transform.position == positionTest1)
+        else if (transform.position == negativeLimit)
             moving = true;
     }
 
@@ -40,7 +40,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (moving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, positionTest, step);
+            transform.position = Vector3.MoveTowards(transform.position, positiveLimit, step);
         }
     }
 
@@ -48,7 +48,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (!moving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, positionTest1, step);
+            transform.position = Vector3.MoveTowards(transform.position, negativeLimit, step);
         }
     }
 }
