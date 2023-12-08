@@ -1224,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448525131237528682, guid: 99833757c346f1d47a735e403012d197, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3497481719880952185, guid: 99833757c346f1d47a735e403012d197, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1286,7 +1286,9 @@ GameObject:
   - component: {fileID: 1211866788}
   - component: {fileID: 1211866791}
   - component: {fileID: 1211866790}
+  - component: {fileID: 1211866793}
   - component: {fileID: 1211866789}
+  - component: {fileID: 1211866792}
   m_Layer: 6
   m_Name: Ground (2)
   m_TagString: Graffiti
@@ -1303,7 +1305,7 @@ Transform:
   m_GameObject: {fileID: 1211866787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: 0.5, z: 0}
+  m_LocalPosition: {x: -6.5, y: 2.5, z: 0}
   m_LocalScale: {x: 5.1466665, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1418,6 +1420,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1211866792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211866787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b96d53dd9f68a04f9a637f6b821b8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limit: {x: 3, y: 3, z: 0}
+  speed: 3
+--- !u!50 &1211866793
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211866787}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1287749421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,7 +3010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448525131237528682, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3497481719880952185, guid: 7916d884b478a0740972f26123d04ecd, type: 3}
       propertyPath: m_LocalPosition.x
