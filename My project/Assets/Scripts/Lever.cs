@@ -13,7 +13,7 @@ public class Lever : MonoBehaviour
     [SerializeField] bool isUp = true;
     [SerializeField] Sprite upSprite;
     [SerializeField] Sprite downSprite;
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
 
     void Start()
     {
@@ -25,6 +25,18 @@ public class Lever : MonoBehaviour
         else
         {
             renderer.sprite = downSprite;
+        }
+    }
+
+    void Update()
+    {
+        if(playersInRange.Count > 0) 
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                //TurnLever();
+                StartCoroutine(WaitToSwitch());
+            }
         }
     }
 
@@ -40,42 +52,41 @@ public class Lever : MonoBehaviour
             playersInRange.Remove(collision.GetComponent<PlayerMovement>());
     }
 
-    IEnumerator Wait()
+    IEnumerator WaitToSwitch()
     {
         yield return new WaitForSeconds(0.5f);
-    }
-
-    void Update()
-    {
-        if(playersInRange.Count > 0) 
+        if (isUp)
         {
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                TurnLever();
-            }
+            isUp = false;
+            renderer.sprite = downSprite;
+            onDown.Invoke();
+        }
+        else
+        {
+            isUp = true;
+            renderer.sprite = upSprite;
+            onUp.Invoke();
         }
     }
 
+    /*
     void TurnLever()
     {
         switch (isUp)
         {
             case true:
                 {
-                    onDown.Invoke();
-                    isUp = false;
-                    renderer.sprite = downSprite;
+                    StartCoroutine(WaitToSwitch());
                     break;
                 }
             case false:
                 {
-                    onUp.Invoke();
-                    isUp = true;
-                    renderer.sprite = upSprite;
+                    StartCoroutine(WaitToSwitch());
                     break;
                 }
         }
     }
+    */
 
     public void SendLog()
     {
