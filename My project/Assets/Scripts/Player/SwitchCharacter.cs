@@ -11,6 +11,7 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] GameObject GentlemanUI;
     [SerializeField] GameObject GraffitiUI;
 
+    bool canSwitch = true;
 
     void Start()
     {
@@ -36,12 +37,21 @@ public class SwitchCharacter : MonoBehaviour
     [ContextMenu("Switch")]
     public void Switch()
     {
-        StartCoroutine(Wait());
+        if(canSwitch)
+        {
+            StartCoroutine(Wait());
+        }
+        else
+        {
+            return;
+        }
     }
 
     IEnumerator Wait()
     {
+        canSwitch = false;
         yield return new WaitForSeconds(1f);
+        canSwitch = true;
         Check();
     }
 
