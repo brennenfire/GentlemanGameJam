@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PaintingPower : MonoBehaviour
 {
-    public GameObject selectedObject;
+    [SerializeField] GameObject painting;
 
     void Update()
     {
@@ -28,6 +28,7 @@ public class PaintingPower : MonoBehaviour
         {
             if(Input.GetMouseButton(0)) 
             {
+                Instantiate(painting, targetObject.transform.position, Quaternion.identity);
                 Destroy(targetObject.gameObject);
             }
         }

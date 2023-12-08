@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3635d95359621df4fb04c4a21e766d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedObject: {fileID: 0}
+  painting: {fileID: 4570174626534200978, guid: 0eb4cc378db54124bb963285a202485c, type: 3}
 --- !u!1 &343174494
 GameObject:
   m_ObjectHideFlags: 0
