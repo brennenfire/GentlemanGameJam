@@ -63,31 +63,11 @@ public class DraggingPower : MonoBehaviour
             selectedObject = null;
         }
     }
-
-    /*
-    void CheckAimInput()
-    {
-        if (Input.GetMouseButton(1))
-            Move();
-    }
-    */
-
     void Move()
     {
         Cursor.lockState = CursorLockMode.Locked;
         var _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
         float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
-        // try calculating how much its moved here
-        /*
-        if (pos.y >= 5)
-        {
-            pos = new Vector3(pos.x, 5, pos.z);
-        }
-        if (pos.y <= -5)
-        {
-            pos = new Vector3(pos.x, -5, pos.z);
-        }
-        */
         if (selectedObject.transform.position.y > 5f)
         {
             selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 5f, selectedObject.transform.position.z);
