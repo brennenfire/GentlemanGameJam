@@ -28,7 +28,7 @@ public class PaintingPower : MonoBehaviour
         {
             if(Input.GetMouseButton(0)) 
             {
-                Instantiate(painting, targetObject.transform.position, Quaternion.identity);
+                Instantiate(painting, targetObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 Destroy(targetObject.gameObject);
             }
         }
