@@ -66,7 +66,7 @@ public class JumpController : MonoBehaviour
 
     bool IsGrounded()
     {
-        if(Physics2D.OverlapCircle(groundCheck.position, 0.14f, groundLayer))
+        if(Physics2D.OverlapCircle(groundCheck.position, 0.25f, groundLayer))
             return true;
         else
             return false;
@@ -90,7 +90,7 @@ public class JumpController : MonoBehaviour
             isJumping = false;
             jumpCounter = 0;
 
-            if(_rigidbody.velocity.y > 0)
+            if(_rigidbody.velocity.y > 0f)
             {
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.6f);
             }
