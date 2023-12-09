@@ -14,21 +14,24 @@ public class ResetScene : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        inTransition.SetActive(true);
-        inTransition.GetComponent<Animator>().SetBool("Play", true);
+        if(inTransition != null) 
+        {
+            inTransition.SetActive(true);
+            inTransition.GetComponent<Animator>().SetBool("Play", true);
+        }
     }
 
     [ContextMenu("Reset")]
     public void Reset()
     {
         outTransition.SetActive(true);
+        outTransition.GetComponent<Animator>().SetBool("Play", true);
         StartCoroutine(PlayAnimations());
     }
 
     IEnumerator PlayAnimations()
     {
-        outTransition.GetComponent<Animator>().SetBool("Play", true);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

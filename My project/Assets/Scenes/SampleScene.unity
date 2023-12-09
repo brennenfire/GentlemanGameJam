@@ -1061,8 +1061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2934de705ac9218408f437eebac02faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inTransition: {fileID: 1611156780}
-  outTransition: {fileID: 969359191}
+  inTransition: {fileID: 969359191}
+  outTransition: {fileID: 1611156780}
 --- !u!1 &799357212
 GameObject:
   m_ObjectHideFlags: 0
