@@ -11,12 +11,14 @@ public class SwitchObjects : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        gentlemanObjects = GameObject.FindGameObjectsWithTag("Gentleman");
-        graffitiObjects = GameObject.FindGameObjectsWithTag("Graffiti");
+        //gentlemanObjects = GameObject.FindGameObjectsWithTag("Gentleman");
+        //graffitiObjects = GameObject.FindGameObjectsWithTag("Graffiti");
     }
 
     public void Switch(string name)
     {
+        gentlemanObjects = GameObject.FindGameObjectsWithTag("Gentleman");
+        graffitiObjects = GameObject.FindGameObjectsWithTag("Graffiti");
         if (name == "Gentleman")
         {
             foreach (var item in gentlemanObjects)
