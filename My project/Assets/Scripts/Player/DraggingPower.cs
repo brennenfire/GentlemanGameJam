@@ -8,6 +8,7 @@ public class DraggingPower : MonoBehaviour
     public static DraggingPower Instance { get; set; }
     public GameObject selectedObject;
     float verticalInput;
+    Rigidbody2D _rigidbody;
 
     void Awake()
     {
@@ -59,14 +60,16 @@ public class DraggingPower : MonoBehaviour
         if(selectedObject) 
         {
             Cursor.lockState = CursorLockMode.None;
-            selectedObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            _rigidbody.velocity = Vector3.zero;
             selectedObject = null;
         }
     }
     void Move()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        var _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
+        _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
+        _rigidbody.constraints = RigidbodyConstraints2D.None;
         float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
         if (selectedObject.transform.position.y > 5f)
         {
