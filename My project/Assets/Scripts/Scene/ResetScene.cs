@@ -9,7 +9,8 @@ public class ResetScene : MonoBehaviour
     public ResetScene Instance { get; private set; }
 
     [SerializeField] GameObject inTransition;
-    [SerializeField] GameObject outTransition;
+    [SerializeField] GameObject outTransition1;
+    [SerializeField] GameObject outTransition2;
 
     void Awake()
     {
@@ -24,8 +25,18 @@ public class ResetScene : MonoBehaviour
     [ContextMenu("Reset")]
     public void Reset()
     {
-        outTransition.SetActive(true);
-        outTransition.GetComponent<Animator>().SetBool("Play", true);
+        int number = UnityEngine.Random.Range(0, 2);
+        GameObject transition;
+        if(number == 0)
+        {
+            transition = outTransition1;
+        }
+        else
+        {
+            transition = outTransition2;
+        }
+        transition.SetActive(true);
+        transition.GetComponent<Animator>().SetBool("Play", true);
         StartCoroutine(PlayAnimations());
     }
 
