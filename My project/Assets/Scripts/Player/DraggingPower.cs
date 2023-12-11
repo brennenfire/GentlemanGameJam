@@ -8,6 +8,7 @@ public class DraggingPower : MonoBehaviour
     public static DraggingPower Instance { get; set; }
     public GameObject selectedObject;
     float verticalInput;
+    float horizontalInput;
     Rigidbody2D _rigidbody;
 
     void Awake()
@@ -32,6 +33,7 @@ public class DraggingPower : MonoBehaviour
     void HandleDragging()
     {
         verticalInput = Input.GetAxis("Mouse Y");
+        horizontalInput = Input.GetAxis("Mouse X");
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButton(0))
         {
@@ -60,7 +62,7 @@ public class DraggingPower : MonoBehaviour
         if(selectedObject) 
         {
             Cursor.lockState = CursorLockMode.None;
-            _rigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
             _rigidbody.velocity = Vector3.zero;
             selectedObject = null;
         }
@@ -70,15 +72,8 @@ public class DraggingPower : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        //if(horizontal)
         float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
-        if (selectedObject.transform.position.y > 5f)
-        {
-            selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, 5f, selectedObject.transform.position.z);
-        }
-        if (selectedObject.transform.position.y < -5f)
-        {
-            selectedObject.transform.position = new Vector3(selectedObject.transform.position.x, -5f, selectedObject.transform.position.z);
-        }
         _rigidbody.velocity = new Vector2(0, move);
     }
 }
