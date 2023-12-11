@@ -11,6 +11,8 @@ public class GraffitiPower : MonoBehaviour
     List<GameObject> graffitis = new List<GameObject>();
     bool canPlace = true;
 
+    public int Uses => uses;
+
     public static GraffitiPower Instance { get; private set; }
 
     void Awake()

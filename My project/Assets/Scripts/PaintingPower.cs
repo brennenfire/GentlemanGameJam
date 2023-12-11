@@ -6,6 +6,13 @@ using UnityEngine;
 public class PaintingPower : MonoBehaviour
 {
     [SerializeField] GameObject painting;
+    List<GameObject> paintingList = new List<GameObject>();
+    int uses;
+
+    void Start()
+    {
+        uses = GraffitiPower.Instance.Uses;    
+    }
 
     void Update()
     {
@@ -28,7 +35,13 @@ public class PaintingPower : MonoBehaviour
         {
             if(Input.GetMouseButton(0)) 
             {
-                Instantiate(painting, targetObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+                if(paintingList.Count >= uses) 
+                {
+                    paintingList.RemoveAt(0);
+                    Destroy(paintingList[0]);
+                }
+                var paint = Instantiate(painting, targetObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+                paintingList.Add(paint);
                 Destroy(targetObject.gameObject);
             }
         }
