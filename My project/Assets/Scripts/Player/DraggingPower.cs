@@ -72,8 +72,16 @@ public class DraggingPower : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = selectedObject.GetComponent<Rigidbody2D>();
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        //if(horizontal)
-        float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
-        _rigidbody.velocity = new Vector2(0, move);
+        var verticalCheck = selectedObject.GetComponent<MoveablePlatform>().Vertical;
+        if (verticalCheck)
+        {
+            float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
+            _rigidbody.velocity = new Vector2(0, move);
+        }
+        else 
+        {
+            float move = Mathf.Lerp(horizontalInput * 15f, _rigidbody.velocity.x, Time.fixedDeltaTime * 2f);
+            _rigidbody.velocity = new Vector2(move, 0);
+        }
     }
 }
