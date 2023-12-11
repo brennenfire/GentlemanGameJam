@@ -38,7 +38,7 @@ public class DraggingPower : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
-            if (targetObject && targetObject.tag == "Gentleman")
+            if (targetObject && targetObject.GetComponent<MoveablePlatform>() != null)
             {
                 selectedObject = targetObject.transform.gameObject;
             }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ResetScene : MonoBehaviour
 {
-    public ResetScene Instance { get; private set; }
+    public static ResetScene Instance { get; private set; }
 
     [SerializeField] GameObject inTransition;
     [SerializeField] GameObject outTransition1;
