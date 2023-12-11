@@ -58,7 +58,7 @@ public class MovingPlatformCheck : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "MovingPlatform")
+        if (collision.gameObject.tag == "Player")
         {
             moveWithPlatform = true;
         }
@@ -66,7 +66,7 @@ public class MovingPlatformCheck : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "MovingPlatform")
+        if (collision.gameObject.tag == "Player")
         {
             moveWithPlatform = false;
         }
