@@ -32,7 +32,6 @@ public class MoveablePlatform : MonoBehaviour
         }
         else
         {
-            //StartCoroutine(Test());
             if (transform.localPosition.x > limit)
             {
                 transform.localPosition = new Vector3(limit, transform.localPosition.y, transform.localPosition.z);
@@ -44,6 +43,7 @@ public class MoveablePlatform : MonoBehaviour
         }
     }
 
+    /*
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player" && transform.position.y > collision.transform.position.y)
@@ -51,4 +51,5 @@ public class MoveablePlatform : MonoBehaviour
             ResetScene.Instance.Reset();
         }
     }
+    */
 }
