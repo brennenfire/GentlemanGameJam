@@ -27,14 +27,14 @@ public class SwitchCharacter : MonoBehaviour
         if (Graffiti.activeSelf)
         {
             SwitchObjects.Instance.Switch("Graffiti");
-            GraffitiUI.SetActive(false);
-            GentlemanUI.SetActive(true);
+            GraffitiUI.SetActive(true);
+            GentlemanUI.SetActive(false);
         }
         else
         {
             SwitchObjects.Instance.Switch("Gentleman");
-            GraffitiUI.SetActive(true);
-            GentlemanUI.SetActive(false);
+            GraffitiUI.SetActive(false);
+            GentlemanUI.SetActive(true);
         }
     }
 
@@ -55,7 +55,7 @@ public class SwitchCharacter : MonoBehaviour
     {
         canSwitch = false;
         StartCoroutine(PlayAnimations());
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(40f);
         canSwitch = true;
         Check();
     }
@@ -63,28 +63,32 @@ public class SwitchCharacter : MonoBehaviour
     IEnumerator PlayAnimations()
     {
         var animatorGraffiti = GraffitiUI.GetComponentInParent<Animator>();
-        var animatorGentleman = Gentleman.GetComponentInParent<Animator>();
+        var animatorGentleman = GentlemanUI.GetComponentInParent<Animator>();
 
         if (Graffiti.activeSelf) 
         {
             Erase.SetActive(true);
             animatorGraffiti.SetBool("Out", true);
             yield return new WaitForSeconds(15f);
+            animatorGraffiti.SetBool("Out", false);
             Erase.SetActive(false);
             Pop.SetActive(true);
             animatorGentleman.SetBool("In", true);
             yield return new WaitForSeconds(25f);
             Pop.SetActive(false);
+            animatorGentleman.SetBool("In", false);
         }
         else
         {
             Rip.SetActive(true);
             animatorGentleman.SetBool("Out", true);
+            yield return new WaitForSeconds(15f);
+            animatorGentleman.SetBool("Out", false);
             Rip.SetActive(false);
             Draw.SetActive(true);
-            yield return new WaitForSeconds(15f);
             animatorGraffiti.SetBool("In", true);
             yield return new WaitForSeconds(25f);
+            animatorGraffiti.SetBool("In", false);
             Draw.SetActive(false);
         }
     }
@@ -95,17 +99,17 @@ public class SwitchCharacter : MonoBehaviour
         {
             SwitchObjects.Instance.Switch("Gentleman");
             Gentleman.SetActive(true);
-            GentlemanUI.SetActive(false);
+            GentlemanUI.SetActive(true);
             Graffiti.SetActive(false);
-            GraffitiUI.SetActive(true);
+            GraffitiUI.SetActive(false);
         }
         else
         {
             SwitchObjects.Instance.Switch("Graffiti");
             Gentleman.SetActive(false);
-            GentlemanUI.SetActive(true);
+            GentlemanUI.SetActive(false);
             Graffiti.SetActive(true);
-            GraffitiUI.SetActive(false);
+            GraffitiUI.SetActive(true);
         }
     }
 }
