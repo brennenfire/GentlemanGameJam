@@ -1873,8 +1873,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Graffiti: {fileID: 131641222}
   Gentleman: {fileID: 268661141}
-  GentlemanUI: {fileID: 1496006654}
-  GraffitiUI: {fileID: 1517486337}
+  GentlemanUI: {fileID: 2137249098}
+  GraffitiUI: {fileID: 1593773789}
+  Erase: {fileID: 1965051112}
+  Draw: {fileID: 985804648}
+  Rip: {fileID: 1373017365}
+  Pop: {fileID: 862400137}
 --- !u!1 &816086441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,7 +2332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &862400138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2622,7 +2626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &985804649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7469,12 +7473,12 @@ GameObject:
   - component: {fileID: 1496006655}
   - component: {fileID: 1496006656}
   m_Layer: 5
-  m_Name: SwitchToGentleman
+  m_Name: GraffitiSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1496006655
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7490,7 +7494,7 @@ RectTransform:
   - {fileID: 1580973661}
   - {fileID: 1965051113}
   - {fileID: 985804649}
-  - {fileID: 2028539067}
+  - {fileID: 1593773790}
   m_Father: {fileID: 1885965284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7530,7 +7534,7 @@ GameObject:
   - component: {fileID: 1517486338}
   - component: {fileID: 1517486339}
   m_Layer: 5
-  m_Name: SwitchToGraffiti
+  m_Name: GentlemanSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7551,7 +7555,7 @@ RectTransform:
   - {fileID: 1890841524}
   - {fileID: 862400138}
   - {fileID: 1373017366}
-  - {fileID: 1542125323}
+  - {fileID: 2137249099}
   m_Father: {fileID: 1885965284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.976}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7598,7 +7602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1542125323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7614,11 +7618,11 @@ RectTransform:
   - {fileID: 787773651}
   - {fileID: 1395678731}
   - {fileID: 1145889300}
-  m_Father: {fileID: 1517486338}
+  m_Father: {fileID: 2137249099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -466.5}
+  m_AnchoredPosition: {x: 0, y: 85}
   m_SizeDelta: {x: 450, y: 170}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1542125324
@@ -7865,6 +7869,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580973660}
   m_CullTransparentMesh: 1
+--- !u!1 &1593773789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593773790}
+  m_Layer: 5
+  m_Name: GraffitiUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1593773790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593773789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2028539067}
+  m_Father: {fileID: 1496006655}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -476}
+  m_SizeDelta: {x: 450, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1605072047
 GameObject:
   m_ObjectHideFlags: 0
@@ -8998,7 +9038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2028539067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9013,11 +9053,11 @@ RectTransform:
   m_Children:
   - {fileID: 463014126}
   - {fileID: 1461594573}
-  m_Father: {fileID: 1496006655}
+  m_Father: {fileID: 1593773790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -426}
+  m_AnchoredPosition: {x: 0, y: 85}
   m_SizeDelta: {x: 450, y: 170}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2028539068
@@ -9385,6 +9425,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082251576}
   m_CullTransparentMesh: 1
+--- !u!1 &2137249098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137249099}
+  m_Layer: 5
+  m_Name: GentlemanUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2137249099
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137249098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1542125323}
+  m_Father: {fileID: 1517486338}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -516.5}
+  m_SizeDelta: {x: 450, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &7967697140989472041
 PrefabInstance:
   m_ObjectHideFlags: 0

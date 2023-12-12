@@ -10,6 +10,10 @@ public class SwitchCharacter : MonoBehaviour
     [SerializeField] GameObject Gentleman;
     [SerializeField] GameObject GentlemanUI;
     [SerializeField] GameObject GraffitiUI;
+    [SerializeField] GameObject Erase;
+    [SerializeField] GameObject Draw;
+    [SerializeField] GameObject Rip;
+    [SerializeField] GameObject Pop;
 
     bool canSwitch = true;
 
@@ -50,24 +54,38 @@ public class SwitchCharacter : MonoBehaviour
     IEnumerator Wait()
     {
         canSwitch = false;
-        PlayAnimations();
-        yield return new WaitForSeconds(1f);
+        StartCoroutine(PlayAnimations());
+        yield return new WaitForSeconds(0.1f);
         canSwitch = true;
         Check();
     }
 
-    void PlayAnimations()
+    IEnumerator PlayAnimations()
     {
-        var animatorGraffiti = Graffiti.GetComponent<Animator>();
-        var animatorGentleman =Gentleman.GetComponent<Animator>();
+        var animatorGraffiti = GraffitiUI.GetComponentInParent<Animator>();
+        var animatorGentleman = Gentleman.GetComponentInParent<Animator>();
 
         if (Graffiti.activeSelf) 
         {
+            Erase.SetActive(true);
             animatorGraffiti.SetBool("Out", true);
+            yield return new WaitForSeconds(15f);
+            Erase.SetActive(false);
+            Pop.SetActive(true);
+            animatorGentleman.SetBool("In", true);
+            yield return new WaitForSeconds(25f);
+            Pop.SetActive(false);
         }
         else
         {
-
+            Rip.SetActive(true);
+            animatorGentleman.SetBool("Out", true);
+            Rip.SetActive(false);
+            Draw.SetActive(true);
+            yield return new WaitForSeconds(15f);
+            animatorGraffiti.SetBool("In", true);
+            yield return new WaitForSeconds(25f);
+            Draw.SetActive(false);
         }
     }
 
