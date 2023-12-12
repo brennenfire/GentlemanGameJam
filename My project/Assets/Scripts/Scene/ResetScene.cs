@@ -43,6 +43,7 @@ public class ResetScene : MonoBehaviour
     IEnumerator PlayAnimations()
     {
         yield return new WaitForSeconds(1.5f);
+        DraggingPower.Instance.StopDragging();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

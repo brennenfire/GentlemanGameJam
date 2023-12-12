@@ -57,7 +57,7 @@ public class DraggingPower : MonoBehaviour
         }
     }
 
-    void StopDragging()
+    public void StopDragging()
     {
         if(selectedObject) 
         {
