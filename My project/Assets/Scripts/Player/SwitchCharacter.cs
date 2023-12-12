@@ -50,9 +50,25 @@ public class SwitchCharacter : MonoBehaviour
     IEnumerator Wait()
     {
         canSwitch = false;
+        PlayAnimations();
         yield return new WaitForSeconds(1f);
         canSwitch = true;
         Check();
+    }
+
+    void PlayAnimations()
+    {
+        var animatorGraffiti = Graffiti.GetComponent<Animator>();
+        var animatorGentleman =Gentleman.GetComponent<Animator>();
+
+        if (Graffiti.activeSelf) 
+        {
+            animatorGraffiti.SetBool("Out", true);
+        }
+        else
+        {
+
+        }
     }
 
     void Check()
