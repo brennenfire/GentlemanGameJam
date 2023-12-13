@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayAudio : MonoBehaviour
 {
-    [SerializeField] List<AudioSource> clips;
+    [SerializeField] List<AudioClip> clips;
 
     public void PlayClip(int clipNumber)
     {
-        clips[clipNumber].Play();
+        GetComponent<AudioSource>().PlayOneShot(clips[clipNumber]);
     }
 }
