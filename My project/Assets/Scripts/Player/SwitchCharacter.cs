@@ -55,7 +55,7 @@ public class SwitchCharacter : MonoBehaviour
     {
         canSwitch = false;
         StartCoroutine(PlayAnimations());
-        yield return new WaitForSeconds(0.42f);
+        yield return new WaitForSeconds(0.65f);
         canSwitch = true;
         Check();
     }
@@ -70,12 +70,12 @@ public class SwitchCharacter : MonoBehaviour
             GraffitiUI.SetActive(false);
             Erase.SetActive(true);
             animatorGraffiti.SetBool("Out", true);
-            yield return new WaitForSeconds(0.16f);
+            yield return new WaitForSeconds(0.2f);
             animatorGraffiti.SetBool("Out", false);
             Erase.SetActive(false);
             Pop.SetActive(true);
             animatorGentleman.SetBool("In", true);
-            yield return new WaitForSeconds(0.26f);
+            yield return new WaitForSeconds(0.45f);
             Pop.SetActive(false);
             animatorGentleman.SetBool("In", false);
             GentlemanUI.SetActive(true);
@@ -85,12 +85,12 @@ public class SwitchCharacter : MonoBehaviour
             GentlemanUI.SetActive(false);
             Rip.SetActive(true);
             animatorGentleman.SetBool("Out", true);
-            yield return new WaitForSeconds(0.16f);
+            yield return new WaitForSeconds(0.2f);
             animatorGentleman.SetBool("Out", false);
             Rip.SetActive(false);
             Draw.SetActive(true);
             animatorGraffiti.SetBool("In", true);
-            yield return new WaitForSeconds(0.26f);
+            yield return new WaitForSeconds(0.45f);
             animatorGraffiti.SetBool("In", false);
             Draw.SetActive(false);
             GraffitiUI.SetActive(true);
