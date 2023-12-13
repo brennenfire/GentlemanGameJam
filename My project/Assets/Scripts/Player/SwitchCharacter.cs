@@ -55,7 +55,7 @@ public class SwitchCharacter : MonoBehaviour
     {
         canSwitch = false;
         StartCoroutine(PlayAnimations());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.42f);
         canSwitch = true;
         Check();
     }
@@ -78,7 +78,7 @@ public class SwitchCharacter : MonoBehaviour
             yield return new WaitForSeconds(0.26f);
             Pop.SetActive(false);
             animatorGentleman.SetBool("In", false);
-            Gentleman.SetActive(true);
+            GentlemanUI.SetActive(true);
         }
         else
         {
@@ -102,7 +102,7 @@ public class SwitchCharacter : MonoBehaviour
         if (Graffiti.activeSelf)
         {
             SwitchObjects.Instance.Switch("Gentleman");
-            GentlemanUI.SetActive(true);
+            Gentleman.SetActive(true);
             Graffiti.SetActive(false);
         }
         else
