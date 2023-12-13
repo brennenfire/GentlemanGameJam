@@ -16,13 +16,21 @@ public class SwitchIndividualObject : MonoBehaviour
 
     public void SwitchOff()
     {
-        GetComponent<Collider2D>().enabled = false;
+        var colliders = GetComponents<Collider2D>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
+        }
         GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.25f);
     }
     
     public void SwitchOn()
     {
-        GetComponent<Collider2D>().enabled = true;
+        var colliders = GetComponents<Collider2D>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = true;
+        }
         GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }
 }
