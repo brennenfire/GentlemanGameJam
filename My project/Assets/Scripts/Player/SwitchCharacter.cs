@@ -54,8 +54,10 @@ public class SwitchCharacter : MonoBehaviour
     IEnumerator Wait()
     {
         canSwitch = false;
-        yield return new WaitForSeconds(1f);
         StartCoroutine(PlayAnimations());
+        yield return new WaitForSeconds(1f);
+        canSwitch = true;
+        Check();
     }
 
     IEnumerator PlayAnimations()
@@ -93,8 +95,6 @@ public class SwitchCharacter : MonoBehaviour
             Draw.SetActive(false);
             GraffitiUI.SetActive(true);
         }
-        canSwitch = true;
-        Check();
     }
 
     void Check()
