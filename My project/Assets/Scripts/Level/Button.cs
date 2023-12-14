@@ -4,27 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Lever : MonoBehaviour
+public class Button : MonoBehaviour
 {
     HashSet<PlayerMovement> playersInRange = new HashSet<PlayerMovement>();
 
-    [SerializeField] UnityEvent onDown;
-    [SerializeField] UnityEvent onUp;
-    [SerializeField] bool isUp = true;
-    [SerializeField] Sprite upSprite;
-    [SerializeField] Sprite downSprite;
+    [SerializeField] UnityEvent on;
+    [SerializeField] UnityEvent off;
+    [SerializeField] bool isOn = true;
+    [SerializeField] Sprite onSprite;
+    [SerializeField] Sprite offSprite;
     new SpriteRenderer renderer;
 
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
-        if(isUp)
+        if(isOn)
         {
-            renderer.sprite = upSprite;
+            renderer.sprite = onSprite;
         }
         else
         {
-            renderer.sprite = downSprite;
+            renderer.sprite = offSprite;
         }
     }
 
@@ -55,17 +55,17 @@ public class Lever : MonoBehaviour
     IEnumerator WaitToSwitch()
     {
         yield return new WaitForSeconds(0.5f);
-        if (isUp)
+        if (isOn)
         {
-            isUp = false;
-            renderer.sprite = downSprite;
-            onDown.Invoke();
+            isOn = false;
+            renderer.sprite = offSprite;
+            on.Invoke();
         }
         else
         {
-            isUp = true;
-            renderer.sprite = upSprite;
-            onUp.Invoke();
+            isOn = true;
+            renderer.sprite = onSprite;
+            off.Invoke();
         }
     }
 
