@@ -13,11 +13,7 @@ public class PaintingPower : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;    
-    }
-
-    void Start()
-    {
+        Instance = this;
         uses = GraffitiPower.Instance.Uses;
     }
 
