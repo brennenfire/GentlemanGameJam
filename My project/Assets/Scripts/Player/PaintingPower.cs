@@ -9,6 +9,13 @@ public class PaintingPower : MonoBehaviour
     List<GameObject> paintingList = new List<GameObject>();
     int uses;
 
+    public static PaintingPower Instance { get; private set; }
+
+    void Awake()
+    {
+        Instance = this;    
+    }
+
     void Start()
     {
         uses = GraffitiPower.Instance.Uses;    
@@ -35,15 +42,20 @@ public class PaintingPower : MonoBehaviour
         {
             if(Input.GetMouseButton(0)) 
             {
-                if(paintingList.Count >= uses) 
+                if(paintingList.Count >= uses)
                 {
-                    paintingList.RemoveAt(0);
-                    Destroy(paintingList[0]);
+                    RemoveFromList();
                 }
                 var paint = Instantiate(painting, targetObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 paintingList.Add(paint);
-                Destroy(targetObject.gameObject);
+                GraffitiPower.Instance.RemoveFromList(targetObject.gameObject);
             }
         }
+    }
+
+    public void RemoveFromList()
+    {
+        paintingList.RemoveAt(0);
+        Destroy(paintingList[0]);
     }
 }

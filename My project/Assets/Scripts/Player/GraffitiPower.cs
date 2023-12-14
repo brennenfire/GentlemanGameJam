@@ -68,4 +68,10 @@ public class GraffitiPower : MonoBehaviour
         Destroy(graffitis[0]);
         graffitis.RemoveAt(0);
     }
+
+    public void RemoveFromList(GameObject target)
+    {
+        graffitis.Remove(target);
+        Destroy(target);
+    }
 }
