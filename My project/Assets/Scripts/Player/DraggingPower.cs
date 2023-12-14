@@ -24,7 +24,7 @@ public class DraggingPower : MonoBehaviour
 
     void CheckForAimInput()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             HandleDragging();
         }
@@ -35,14 +35,14 @@ public class DraggingPower : MonoBehaviour
         verticalInput = Input.GetAxis("Mouse Y");
         horizontalInput = Input.GetAxis("Mouse X");
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(0))
-        {
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+        Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+        //f (Input.GetMouseButton(0))
+        //{
             if (targetObject && targetObject.GetComponent<MoveablePlatform>() != null)
             {
                 selectedObject = targetObject.transform.gameObject;
             }
-        }
+        //}
         if (selectedObject)
         {
             Move();

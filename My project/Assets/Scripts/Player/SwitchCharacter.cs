@@ -20,7 +20,6 @@ public class SwitchCharacter : MonoBehaviour
     void Start()
     {
         Gentleman.SetActive(true);
-        Graffiti.SetActive(true);
         CheckOnStart();
     }
 
