@@ -18,7 +18,7 @@ public class PaintingPower : MonoBehaviour
 
     void Start()
     {
-        uses = GraffitiPower.Instance.Uses;    
+        uses = GraffitiPower.Instance.Uses;
     }
 
     void Update()
