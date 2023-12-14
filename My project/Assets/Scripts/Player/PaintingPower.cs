@@ -24,7 +24,7 @@ public class PaintingPower : MonoBehaviour
 
     void CheckForAimInput()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             PaintPlatform();
         }
@@ -36,8 +36,8 @@ public class PaintingPower : MonoBehaviour
         Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
         if (targetObject && targetObject.tag == "Art") 
         {
-            //if(Input.GetMouseButton(0)) 
-            //{
+            if(Input.GetMouseButton(0)) 
+            {
                 if(paintingList.Count >= uses)
                 {
                     RemoveFromList();
@@ -45,7 +45,7 @@ public class PaintingPower : MonoBehaviour
                 var paint = Instantiate(painting, targetObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
                 paintingList.Add(paint);
                 GraffitiPower.Instance.RemoveFromList(targetObject.gameObject);
-            //}
+            }
         }
     }
 
