@@ -40,6 +40,19 @@ public class SwitchCharacter : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        CheckForInput();
+    }
+
+    void CheckForInput()
+    {
+        if(Input.GetKeyDown(KeyCode.F)) 
+        {
+            Switch();
+        }
+    }
+
     [ContextMenu("Switch")]
     public void Switch()
     {
