@@ -42,7 +42,7 @@ public class PaintingPower : MonoBehaviour
                 {
                     RemoveFromList();
                 }
-                var paint = Instantiate(painting, targetObject.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+                var paint = Instantiate(painting, targetObject.transform.position + new Vector3(0, 0f, 0), Quaternion.identity);
                 paintingList.Add(paint);
                 GraffitiPower.Instance.RemoveFromList(targetObject.gameObject);
             }
