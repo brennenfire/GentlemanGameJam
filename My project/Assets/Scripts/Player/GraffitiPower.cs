@@ -71,7 +71,7 @@ public class GraffitiPower : MonoBehaviour
 
     public void RemoveFromList(GameObject target)
     {
-        graffitis.Remove(target);
         Destroy(target);
+        graffitis.Remove(target);
     }
 }

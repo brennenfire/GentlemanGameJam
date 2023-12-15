@@ -51,7 +51,7 @@ public class PaintingPower : MonoBehaviour
 
     public void RemoveFromList()
     {
-        paintingList.RemoveAt(0);
         Destroy(paintingList[0]);
+        paintingList.RemoveAt(0);
     }
 }
