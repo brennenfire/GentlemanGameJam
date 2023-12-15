@@ -19,7 +19,14 @@ public class JumpController : MonoBehaviour
     float jumpCounter;
     float jumpBufferCounter;
     float coyoteTimeCounter;
-    
+
+    public static JumpController Instance { get; set; }
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         vectorGravity = new Vector2(0, -Physics2D.gravity.y);
@@ -64,7 +71,7 @@ public class JumpController : MonoBehaviour
         }
     }
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         if(Physics2D.OverlapCircle(groundCheck.position, 0.25f, groundLayer))
             return true;
