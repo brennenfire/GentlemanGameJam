@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(horizontalInput != 0) 
         {
-            float newHorizontal = Mathf.Lerp(_rigidbody.velocity.x, horizontalInput * speed, Time.fixedDeltaTime * 3f);
+            float newHorizontal = Mathf.Lerp(_rigidbody.velocity.x, horizontalInput * speed, Time.fixedDeltaTime * 15f);
             _rigidbody.velocity = new Vector2(newHorizontal, _rigidbody.velocity.y);
         }
     }

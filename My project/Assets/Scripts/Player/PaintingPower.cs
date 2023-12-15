@@ -32,7 +32,7 @@ public class PaintingPower : MonoBehaviour
 
     void PaintPlatform()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
         if (targetObject && targetObject.tag == "Art") 
         {

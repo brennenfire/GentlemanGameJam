@@ -34,7 +34,7 @@ public class DraggingPower : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Mouse Y");
         horizontalInput = Input.GetAxis("Mouse X");
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
         if (Input.GetMouseButton(0))
         {
@@ -75,12 +75,12 @@ public class DraggingPower : MonoBehaviour
         var verticalCheck = selectedObject.GetComponent<MoveablePlatform>().Vertical;
         if (verticalCheck)
         {
-            float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 15f, Time.fixedDeltaTime * 2f);
+            float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 5f, Time.fixedDeltaTime * 10f);
             _rigidbody.velocity = new Vector2(0, move);
         }
         else 
         {
-            float move = Mathf.Lerp(horizontalInput * 15f, _rigidbody.velocity.x, Time.fixedDeltaTime * 2f);
+            float move = Mathf.Lerp(horizontalInput * 5f, _rigidbody.velocity.x, Time.fixedDeltaTime * 10f);
             _rigidbody.velocity = new Vector2(move, 0);
         }
     }
