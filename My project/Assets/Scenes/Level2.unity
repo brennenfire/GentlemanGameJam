@@ -504,6 +504,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3829739704228136560, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -581,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2074410598570505335, guid: 2bf840570cdc7ba49acdaa2857100daa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.4
+      value: 42.45
       objectReference: {fileID: 0}
     - target: {fileID: 2074410598570505335, guid: 2bf840570cdc7ba49acdaa2857100daa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1148,8 +1152,8 @@ Transform:
   m_GameObject: {fileID: 1155620301}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.6791261, w: 0.7340217}
-  m_LocalPosition: {x: 3.99, y: -1.1472, z: 0}
-  m_LocalScale: {x: 0.25439906, y: 0.5, z: 1}
+  m_LocalPosition: {x: 3.9526, y: -1.3913, z: 0}
+  m_LocalScale: {x: 0.20662291, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1390123632}
@@ -1239,7 +1243,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000000
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1682,6 +1686,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6024486076135892278, guid: 8b4dcdf5618cf2441b09bc4624b60a52, type: 3}
+    - {fileID: 2570889373981155618, guid: 8b4dcdf5618cf2441b09bc4624b60a52, type: 3}
+    - {fileID: 3843993433129289447, guid: 8b4dcdf5618cf2441b09bc4624b60a52, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b4dcdf5618cf2441b09bc4624b60a52, type: 3}
@@ -2289,8 +2295,8 @@ Transform:
   m_GameObject: {fileID: 2037630347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.71770805, w: 0.69634414}
-  m_LocalPosition: {x: 3.86, y: -1.1472, z: 0}
-  m_LocalScale: {x: 0.25439906, y: 0.5, z: 1}
+  m_LocalPosition: {x: 3.86, y: -1.4424, z: 0}
+  m_LocalScale: {x: 0.19700663, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 926083478}
@@ -2380,7 +2386,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000000
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -3102,13 +3108,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: c4bdbbab33fa7404a881fbceaa2662a6, type: 2}
-  m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  m_TileSpriteArray: []
   m_TileMatrixArray:
   - m_RefCount: 4
     m_Data:
@@ -5541,7 +5541,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000000
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -9555,10 +9555,6 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: db4531c06d502c14f9788fa83e75ce9b, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 9a776ad8927720644bca70748b801692, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 379
     m_Data:
@@ -9680,8 +9676,8 @@ Transform:
   m_GameObject: {fileID: 9015494375741718517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.6791261, w: 0.7340217}
-  m_LocalPosition: {x: 3.99, y: -1.1472, z: 0}
-  m_LocalScale: {x: 0.25439906, y: 0.5, z: 1}
+  m_LocalPosition: {x: 3.99, y: -1.378, z: 0}
+  m_LocalScale: {x: 0.20978326, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9039167217848238888}

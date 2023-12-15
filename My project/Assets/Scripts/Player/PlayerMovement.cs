@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
-    [SerializeField] Transform leftSensor;
-    [SerializeField] Transform rightSensor;
-    [SerializeField] float wallSlideSpeed = 1f;
+    //[SerializeField] Transform leftSensor;
+    //[SerializeField] Transform rightSensor;
+    //[SerializeField] float wallSlideSpeed = 1f;
 
     Rigidbody2D _rigidbody;
     float horizontalInput;
@@ -21,10 +21,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         GetHorizontalInput();
-        if(ShouldSlide())
-        {
-            Slide();
-        }
+        //if(ShouldSlide())
+        //{
+            //Slide();
+        //}
         Movement();
     }
 
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(horizontalInput != 0) 
         {
-            float newHorizontal = Mathf.Lerp(_rigidbody.velocity.x, horizontalInput * speed, Time.fixedDeltaTime * 15f);
+            float newHorizontal = Mathf.Lerp(_rigidbody.velocity.x, horizontalInput * speed, Time.fixedDeltaTime * 20f);
             _rigidbody.velocity = new Vector2(newHorizontal, _rigidbody.velocity.y);
         }
     }

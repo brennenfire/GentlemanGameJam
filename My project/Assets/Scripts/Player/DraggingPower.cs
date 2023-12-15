@@ -10,6 +10,7 @@ public class DraggingPower : MonoBehaviour
     float verticalInput;
     float horizontalInput;
     Rigidbody2D _rigidbody;
+    [SerializeField] float stupidFuckingThing = 5f;
 
     void Awake()
     {
@@ -75,12 +76,12 @@ public class DraggingPower : MonoBehaviour
         var verticalCheck = selectedObject.GetComponent<MoveablePlatform>().Vertical;
         if (verticalCheck)
         {
-            float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 5f, Time.fixedDeltaTime * 10f);
+            float move = Mathf.Lerp(_rigidbody.velocity.y, verticalInput * 3f, Time.fixedDeltaTime * stupidFuckingThing);
             _rigidbody.velocity = new Vector2(0, move);
         }
         else 
         {
-            float move = Mathf.Lerp(horizontalInput * 5f, _rigidbody.velocity.x, Time.fixedDeltaTime * 10f);
+            float move = Mathf.Lerp(horizontalInput * 3f, _rigidbody.velocity.x, Time.fixedDeltaTime * stupidFuckingThing);
             _rigidbody.velocity = new Vector2(move, 0);
         }
     }
