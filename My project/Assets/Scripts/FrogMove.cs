@@ -5,12 +5,21 @@ using UnityEngine;
 public class FrogMove : MonoBehaviour
 {
     [SerializeField] Vector3 targetDestination;
+    [SerializeField] bool end = false;
 
     void Update()
     {
         if (transform.position != targetDestination)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetDestination, 1.5f * Time.fixedDeltaTime);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(end)
+        {
+            Application.Quit();
         }
     }
 }
