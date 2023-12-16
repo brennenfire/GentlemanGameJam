@@ -13,6 +13,7 @@ public class GraffitiPower : MonoBehaviour
 
     public int Uses => uses;
 
+    public List<GameObject> Graffitis => graffitis;
     public static GraffitiPower Instance { get; private set; }
 
     void Awake()
@@ -42,7 +43,7 @@ public class GraffitiPower : MonoBehaviour
                 StartCoroutine(FadeOut());
             }
             StartCoroutine(ResetPlacement());
-            var test = Instantiate(Graffiti, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
+            var test = Instantiate(Graffiti, transform.position + new Vector3(0f, 0f, 0f), Quaternion.identity);
             graffitis.Add(test);
         }
     }

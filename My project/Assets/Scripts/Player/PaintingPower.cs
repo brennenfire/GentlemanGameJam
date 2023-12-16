@@ -9,6 +9,7 @@ public class PaintingPower : MonoBehaviour
     List<GameObject> paintingList = new List<GameObject>();
     int uses;
 
+    public List<GameObject> Paintings => paintingList;
     public static PaintingPower Instance { get; private set; }
 
     void Awake()
