@@ -10,7 +10,7 @@ public class Button : MonoBehaviour
 
     [SerializeField] UnityEvent on;
     [SerializeField] UnityEvent off;
-    [SerializeField] bool isOn = true;
+    [SerializeField] bool isOn = false;
     [SerializeField] Sprite onSprite;
     [SerializeField] Sprite offSprite;
     new SpriteRenderer renderer;
@@ -21,10 +21,12 @@ public class Button : MonoBehaviour
         if(isOn)
         {
             renderer.sprite = onSprite;
+            on.Invoke();
         }
         else
         {
             renderer.sprite = offSprite;
+            off.Invoke();
         }
     }
 
@@ -55,17 +57,17 @@ public class Button : MonoBehaviour
     IEnumerator WaitToSwitch()
     {
         yield return new WaitForSeconds(0.5f);
-        if (isOn)
+        if (!isOn)
         {
-            isOn = false;
-            renderer.sprite = offSprite;
             on.Invoke();
+            renderer.sprite = onSprite;
+            isOn = true;
         }
         else
         {
-            isOn = true;
-            renderer.sprite = onSprite;
             off.Invoke();
+            renderer.sprite = offSprite;
+            isOn = false;
         }
     }
 

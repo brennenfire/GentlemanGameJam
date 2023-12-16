@@ -28,7 +28,7 @@ public class GraffitiPower : MonoBehaviour
 
     void CheckForInput()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.G))
         {
             UsePower();
         }
