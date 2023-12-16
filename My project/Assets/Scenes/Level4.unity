@@ -1478,8 +1478,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The red character can place graffitis using e that can then be clicked
-    on by the blue character to turn them into a painting with a platform ontop
+  m_text: The punk can place graffitis using e that can then be clicked on by the
+    blue character to turn them into a painting with a platform ontop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92a4c433b6a8b174b8db1b486dfd90d7, type: 2}
   m_sharedMaterial: {fileID: -2231890692618455853, guid: 92a4c433b6a8b174b8db1b486dfd90d7, type: 2}
