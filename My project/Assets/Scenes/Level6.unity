@@ -789,6 +789,18 @@ PrefabInstance:
       propertyPath: wallSlideSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5399109146873751518, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399109146873751518, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8669113144141980467, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
