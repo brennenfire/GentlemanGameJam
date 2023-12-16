@@ -880,10 +880,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 416104423578873610, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3429908722109881395, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.39
@@ -1472,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199187358218737241, guid: cc3b2aead2566ac4186593a1583278c4, type: 3}
       propertyPath: m_TileSpriteArray.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4199187358218737241, guid: cc3b2aead2566ac4186593a1583278c4, type: 3}
       propertyPath: m_Tiles.Array.data[1].first.x

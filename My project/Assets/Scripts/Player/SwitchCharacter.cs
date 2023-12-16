@@ -19,13 +19,13 @@ public class SwitchCharacter : MonoBehaviour
 
     void Start()
     {
-        Gentleman.SetActive(true);
+        Graffiti.SetActive(true);
         CheckOnStart();
     }
 
     void CheckOnStart()
     {
-        Gentleman.SetActive(false);
+        Graffiti.SetActive(false);
         if (Graffiti.activeSelf)
         {
             SwitchObjects.Instance.Switch("Graffiti");

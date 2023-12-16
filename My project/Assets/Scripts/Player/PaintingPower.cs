@@ -15,7 +15,7 @@ public class PaintingPower : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        uses = GraffitiPower.Instance.Uses;
+        uses = 2;
     }
 
     void Update()
