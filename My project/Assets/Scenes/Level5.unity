@@ -318,7 +318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'RESET LISTs
+  m_text: 'RESET POWERS
 
 '
   m_isRightToLeft: 0
