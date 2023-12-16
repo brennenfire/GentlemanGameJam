@@ -20,6 +20,7 @@ public class FrogMove : MonoBehaviour
         if(end)
         {
             Application.Quit();
+            Debug.Log("end");
         }
     }
 }

@@ -530,7 +530,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1810272201128785130, guid: 2bf840570cdc7ba49acdaa2857100daa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1996810505}
   m_SourcePrefab: {fileID: 100100000, guid: 2bf840570cdc7ba49acdaa2857100daa, type: 3}
 --- !u!4 &608687750 stripped
 Transform:
@@ -849,6 +852,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96bff1055f297bc49a4aadb96f12f970, type: 3}
+--- !u!1 &1996810500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1810272201128785130, guid: 2bf840570cdc7ba49acdaa2857100daa, type: 3}
+  m_PrefabInstance: {fileID: 559985668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1996810505
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996810500}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.976, y: 0.824}
+    newSize: {x: 2.44, y: 2.06}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.976, y: 0.824}
+  m_EdgeRadius: 0
 --- !u!1 &2083639815 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8961471712145857229, guid: feb93af87e5ef4e44b73c983d87ac475, type: 3}
@@ -4411,7 +4464,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 13
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4454,13 +4507,13 @@ Tilemap:
     m_Data: {fileID: -795947787, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1750519711, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: -2120997131, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1707891965, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -1753246081, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
-  - m_RefCount: 6
+  - m_RefCount: 5
     m_Data: {fileID: 1537826203, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -2108483262, guid: 62ed7ee6189c9384d924d754961fffb9, type: 3}
