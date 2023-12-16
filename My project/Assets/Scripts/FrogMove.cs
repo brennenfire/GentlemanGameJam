@@ -11,7 +11,7 @@ public class FrogMove : MonoBehaviour
     {
         if (transform.position != targetDestination)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetDestination, 1.5f * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetDestination, 3 * Time.fixedDeltaTime);
         }
     }
 
