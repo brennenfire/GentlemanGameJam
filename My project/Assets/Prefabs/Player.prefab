@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedObject: {fileID: 0}
+  stupidFuckingThing: 5
 --- !u!114 &3862513587564179144
 MonoBehaviour:
   m_ObjectHideFlags: 0
